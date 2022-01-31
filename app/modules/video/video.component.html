@@ -1,0 +1,21 @@
+<p>video works!</p>
+<div class="container">
+    <ul class="row">
+        <li class="col-sm-4" *ngFor="let vi of videos?.data">
+            <h2>{{vi.videoName}}</h2>
+           <!-- <iframe src="{{vi.videoLink}}" frameborder="0" allowfullscreen></iframe> 
+           <iframe [src]='photoURL()' width="640" height="360" frameborder="0"
+            webkitallowfullscreen mozallowfullscreen allowfullscreen> 
+        </iframe>-->
+        </li>
+    </ul>
+    <ul>
+        <li *ngFor="let newvi of newvideo?.data">
+            <!-- <iframe [src]='newvi.video' width="640" height="360" frameborder="0"
+                webkitallowfullscreen mozallowfullscreen allowfullscreen> 
+            </iframe> -->
+            
+        </li>
+        
+    </ul>
+</div>

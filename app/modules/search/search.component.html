@@ -1,0 +1,39 @@
+
+<app-header></app-header>
+
+<div class="row">
+    <div class="col-sm-12">
+        <form #searchForm="ngForm">
+            <input type="text"  
+            class="form-control"
+            ngModel
+            name="searchTerm"
+        
+            required
+            autocomplete="off"/>
+        
+
+        <!-- <input placeholder="Search" [formControl]="searchControl" name="serach"  > -->
+       
+        </form>
+        <div class="results" *ngIf="results">
+            
+            <p>Results:{{serachCount}} </p>
+            <div  *ngFor="let search_result of results">
+                <h2>{{search_result.title}}</h2>   
+             
+            </div>
+           
+        </div>
+    </div>
+
+       
+       
+  
+   
+  
+  
+   
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,48 @@
+<app-header></app-header>
+<section class="tvalcoves_details">
+    <div class="container">
+        <div class="main_tv" *ngFor="let bathrooms_details__ of bathrooms_details">
+            <figure>
+                <img src="http://localhost/peterbernard_ci/uploads/{{bathrooms_details__?.image}}">
+            </figure>
+            <div class="tv_details_content">
+                <h2>{{bathrooms_details__?.banner_name}}</h2>
+                <p>{{bathrooms_details__?.text}}</p>
+                <p>{{bathrooms_details__.price | currency:'INR'}}</p>
+                <!-- <p>{{bathrooms_details__.quantity}}</p> -->
+                   
+            </div>
+           
+                        
+        </div> 
+        <button>Select Quantity<input type="number" id="" readonly="" class="input-text qty" [value]="countQuantity" name="quantity"  title="Qty" placeholder="" inputmode="numeric" id="quantity">                                
+            <input type="button" value="+" class="plus" (click) ="increase()"> 
+            <input type="button" value= "-"  class="minus" (click) ="derease()">                                 
+        </button>     
+        <div class="button">
+            <a [routerLink] ="" (click)="addtocart()">Add to cart</a>
+        </div>
+        
+    </div>
+    <!-- <div class="tv_slider">
+        <div class="container">
+            <owl-carousel-o [options]="customOptions">
+                <ng-container *ngFor="let bathrooms_data__ of bathrooms_data">
+                    <ng-template carouselSlide>
+                        <a [routerLink] = "['/bathroomsdetails',bathrooms_data__.id]"><img src="http://localhost/peterbernard_ci/uploads/{{bathrooms_data__?.image}}"></a>
+                    </ng-template>
+                </ng-container>          
+            </owl-carousel-o>
+        </div>
+       
+    </div>  -->
+    <!-- <div class="tv_slider">
+        <div class="container">      
+            <div *ngFor="let bathrooms_data__ of bathrooms_data">           
+                <a [routerLink] = "['/tvalcovesdetails',bathrooms_data__.id]"><img src="http://localhost/peterbernard_ci/uploads/{{bathrooms_data__?.image}}"></a>
+                <h2>{{bathrooms_data__.id}}</h2>              
+            </div>                
+        </div>      
+    </div>  -->
+</section>
+<app-footer></app-footer>

@@ -1,0 +1,37 @@
+<app-header></app-header>
+<section class="tv_alcoves bedrooms">
+    <div class="container">
+        <div class="breadcun"> </div>
+        
+        <div class="content_service">
+            <p>
+                We can reproduce any Instagram image for your built-in furniture,
+                We can provide TV and alcove units in classic and contemporary finishes, the easiest way to get the built-in furniture you want is to share some Instagram images of what you like and we will manufacture to you exact requirements.
+            </p>
+        </div>
+        <div class="tvalcoves_list bedroomslist">
+            <ul class="row">                          
+                <li class="col-sm-6 col-md-6 col-xs-4 col-xl-4" *ngFor = "let bedrooms__ of bedrooms" > 
+                    
+                        <a [routerLink]="['/bedroomsdetails',bedrooms__.id]">
+                            <div class="img">
+                                <figure>
+                                    <img src="http://localhost/peterbernard_ci/uploads/{{bedrooms__.image}}">
+                                </figure>
+                            </div>                       
+                            <div class="tvalcoves_content">
+                                <h2>{{bedrooms__.banner_name}}</h2>
+                                <p>{{bedrooms__.text}}</p>
+                            </div>
+                        </a>
+                                                                
+                </li>
+                    
+                       
+                   
+            </ul>
+        </div>
+            
+    </div>
+</section>
+<app-footer></app-footer>

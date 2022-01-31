@@ -1,0 +1,11 @@
+/* .cart_btn .qty{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+button.cart_btn{
+    position: relative;
+} */
+.cart_btn .qty input{
+    width: 20%;
+}

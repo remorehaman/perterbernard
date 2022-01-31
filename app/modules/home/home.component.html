@@ -1,0 +1,178 @@
+<app-header></app-header>
+<section class="home">
+    <div class="banner">
+        <owl-carousel-o [options]="customOptions">
+            <ng-container *ngFor="let slide of bannerlist">
+                <ng-template carouselSlide>
+                    <img src="http://localhost/peterbernard_ci/uploads/{{slide.image}}">
+                    <div class="banner-link">
+                        <a href="#" class="banner_read_button">View More Contemporary Kitchens</a>
+                    </div>   
+                </ng-template>
+            </ng-container>          
+        </owl-carousel-o>
+    </div>
+    <section class="body_main" *ngFor = "let pet of peterBernard">
+        <div class="peter_ber">
+            <div class="container">
+                <h2>{{pet.title}}</h2>
+                <p [innerHTML] = "pet.content"> </p>
+            </div>   
+        </div>
+        <div class="peter_why_choose_us_main">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-sm-6">
+                        <div class="peter_why_choose_us">
+                                <h2>{{pet.why_choose_us_title}}</h2>
+                                <div [innerHTML] = "pet.why_choose_us_content"> </div>        
+                        </div>
+                    </div>
+                    <div class="col-sm-6 conatct_content">
+                        <h2 class="contact_heading">Contact Peter Bernard on (01) 201 1901</h2>
+                        <p>Talk to Peter Bernard Kitchen Design Dublin today about your new contemporary kitchen, traditional kitchen, bedroom units, bathroom, alcove bespoke unit or bespoke furniture…</p>
+                        <a href="{{siteUrl}}contact/" class="btn contact_button">Contact us</a>
+                    </div>        
+                </div>    
+            </div>         
+        </div>   
+         
+    </section>
+    <section class="services">
+        <div class="service_list">
+            <figure>
+                <section class="gallery-home">
+                    <div class="container">
+                        <div class="head-gallery">#peterbernard</div>
+                        <div class="grid">
+                            <div class="grid-sizer"></div>                             
+                            <!-- <div class="grid-item" *ngFor = "let services of serviceList">
+                                <img src="http://localhost/peterbernard_ci/uploads/{{services.image}}">
+                            </div> -->
+                            <ngx-masonry>
+                                <div ngxMasonryItem class="grid-item" *ngFor="let services of serviceList">
+                                    <img src="http://localhost/peterbernard_ci/uploads/{{services.image}}">
+                               </div>
+                            </ngx-masonry>              
+                        </div>
+                    </div>
+                </section> 
+            </figure>
+        </div>
+    </section>
+    
+    <section class="contact_section contact-sec">
+        <div class="crow">
+            <div class="contact-left">
+                <div class="container">
+                <h2>Get In Touch</h2>
+                    <ul class="ul">
+                        <li>
+                            <h3>Find Us</h3>
+                            <p>Unit 15, Newtown Business Park, Newtownmountkennedy, Co Wicklow</p>
+                        </li>
+                        <li>
+                            <h3>Contact info</h3>
+                            <div><span>T: </span><a href="">(01) 201 1901</a> </div>
+                            <div ><span>E: </span><a href="mailto:info@peterbernard.ie">info@peterbernard.ie</a></div>
+                        </li>
+                    </ul>
+                    <div class="map_home">
+                        <!-- <?php echo get_field('map')?> -->
+                    </div>
+                </div>
+            </div>
+            <div class="contact-right">
+                <img src="/./assets/images/contact-right.jpg" alt="">
+                <div class="cform form_wrap">
+                    <h3>Send Us Your Enquiry</h3>
+                    <form [formGroup]="usersModel.formGroup" >                 
+                       
+                            <div class="input-group">          
+                                <input type="text" formControlName="first_nameControl" [(ngModel)]="usersModel.first_name" name="first_name" placeholder="First Name" 
+                                [required]="true"
+                                [attr.aria-invalid]="usersModel.formGroup.controls['first_nameControl'].invalid && usersModel.formGroup.controls['first_nameControl'].touched ? true : null" >
+                                <ng-container *ngIf="usersModel.formGroup.controls['first_nameControl'].dirty">
+                                    <p class="caption status-danger" style="padding-top: 5px;" *ngIf="usersModel.formGroup.controls['first_nameControl'].dirty && usersModel.formGroup.controls['first_nameControl'].hasError('required')">
+                                    First Name is required!
+                                    </p>
+                                    <p class="caption status-danger" style="padding-top: 5px;" *ngIf="usersModel.formGroup.controls['first_nameControl'].dirty && usersModel.formGroup.controls['first_nameControl'].hasError('pattern')">
+                                    Only alphanumeric characters are permitted!
+                                    </p>
+                                  
+                                </ng-container>
+                            </div>
+                      
+                            <div class="input-group">          
+                                <input type="text" formControlName="last_nameControl" [(ngModel)]="usersModel.last_name" name="last_name" placeholder="Last Name" 
+                                [required]="true"
+                                [attr.aria-invalid]="usersModel.formGroup.controls['last_nameControl'].invalid && usersModel.formGroup.controls['last_nameControl'].touched ? true : null" >
+                                <ng-container *ngIf="usersModel.formGroup.controls['last_nameControl'].dirty">
+                                    <p class="caption status-danger" style="padding-top: 5px;" *ngIf="usersModel.formGroup.controls['last_nameControl'].dirty && usersModel.formGroup.controls['last_nameControl'].hasError('required')">
+                                     Name is required!
+                                    </p>
+                                    <p class="caption status-danger" style="padding-top: 5px;" *ngIf="usersModel.formGroup.controls['last_nameControl'].dirty && usersModel.formGroup.controls['last_nameControl'].hasError('pattern')">
+                                    Only alphanumeric characters are permitted!
+                                    </p>
+                                </ng-container>
+                            </div>                  
+
+                            <div class="input-group">
+                                <input type="text" placeholder="Email Address" [(ngModel)]="usersModel.email" formControlName="emailControl" 
+                                [required]="true"
+                                [attr.aria-invalid]="usersModel.formGroup.controls['emailControl'].invalid && usersModel.formGroup.controls['emailControl'].touched ? true : null" >
+                                <ng-container *ngIf="usersModel.formGroup.controls['emailControl'].dirty">
+                                    <p class="caption status-danger" style="padding-top: 5px;" *ngIf="usersModel.formGroup.controls['emailControl'].dirty && usersModel.formGroup.controls['emailControl'].hasError('required')">
+                                      Email is required!
+                                    </p>
+                                    <p class="caption status-danger" style="padding-top: 5px;" *ngIf="usersModel.formGroup.controls['emailControl'].dirty && usersModel.formGroup.controls['emailControl'].hasError('email')">
+                                      Please enter a valid email address.
+                                    </p>  
+                                </ng-container>      
+                            </div>
+                              
+                            <div class="input-group">
+                                <!-- onKeyPress="if(this.value.length==10) return false;"  -->
+                                <input type="number" placeholder="Phone Number" [(ngModel)]="usersModel.phone" formControlName="phoneControl" 
+                                [required]="true"
+                       
+                                [attr.aria-invalid]="usersModel.formGroup.controls['phoneControl'].invalid && usersModel.formGroup.controls['phoneControl'].touched ? true : null" >
+                                <ng-container *ngIf="usersModel.formGroup.controls['phoneControl'].dirty">
+                                    <p class="caption status-danger" style="padding-top: 5px;" *ngIf="usersModel.formGroup.controls['phoneControl'].dirty && usersModel.formGroup.controls['phoneControl'].hasError('required')">
+                                      Phone Number is required!
+                                    </p>
+                                    <p class="caption status-danger" style="padding-top: 5px;" *ngIf="usersModel.formGroup.controls['phoneControl'].dirty && usersModel.formGroup.controls['phoneControl'].hasError('pattern')">
+                                      Please enter a valid phone number.
+                                    </p>  
+                                </ng-container>      
+                            </div>         
+                            
+                            <div class="input-group message">
+                                <textarea type="text" placeholder="Write Here" [(ngModel)]="usersModel.message" formControlName="messageControl" 
+                                [required]="true"
+                                [attr.aria-invalid]="usersModel.formGroup.controls['messageControl'].invalid && usersModel.formGroup.controls['messageControl'].touched ? true : null" ></textarea>
+                                <ng-container *ngIf="usersModel.formGroup.controls['messageControl'].dirty">
+                                    <p class="caption status-danger" style="padding-top: 5px;" *ngIf="usersModel.formGroup.controls['messageControl'].dirty && usersModel.formGroup.controls['messageControl'].hasError('required')">
+                                        Message is required!
+                                    </p>
+                                    <p class="caption status-danger" style="padding-top: 5px;" *ngIf="usersModel.formGroup.controls['messageControl'].dirty && usersModel.formGroup.controls['messageControl'].hasError('message')">
+                                      Please be responsible for giving us a message.
+                                    </p>  
+                                </ng-container>      
+                            </div>
+                            
+
+                            <div class="input-group button_submit">
+                                <button type="submit" class="form-control"  id="signupnow"(click)="createuser()"status="success" [disabled]="!usersModel.formGroup.valid">Submit</button>
+                            </div>                                 
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+<app-footer></app-footer>
+
+<input type="text" [ngModel]="overRideRate">
+{{overRideRate}}

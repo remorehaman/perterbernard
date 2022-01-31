@@ -1,0 +1,39 @@
+<app-header></app-header>
+<section class="accessories">
+    <div class="container">
+        <div class="breadcun">
+           
+        </div>
+        <div class="accessories_banner_image">
+            <figure>
+                <img src="/./assets/images/kitchen3.jpg">
+            </figure>
+        </div>
+        
+        <div class="accessories_list">
+            <div class="accessories_main" *ngFor = "let acc of accList">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="img">
+                            <figure>
+                                <img src="http://localhost/peterbernard_ci/uploads/{{acc.image}}">
+                            </figure>
+                        </div>    
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="accessories_main_content">
+                            <h2>{{acc.banner_name}}</h2>
+                            <p [innerHtml] = "acc.text1"></p>
+                            <a [routerLink]="['/accessoriesdetails',acc.id]">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                                   
+              
+            </div>
+            
+        </div>
+            
+    </div>
+</section>
+<app-footer></app-footer>

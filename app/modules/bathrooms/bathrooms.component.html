@@ -1,0 +1,90 @@
+<app-header></app-header>
+<section class="tv_alcoves bathrooms">
+    <div class="container">
+        <div class="breadcun"> </div>
+       
+        <div class="content_service">
+            <p>
+                We can reproduce any Instagram image for your built-in furniture,
+                We can provide TV and alcove units in classic and contemporary finishes, the easiest way to get the built-in furniture you want is to share some Instagram images of what you like and we will manufacture to you exact requirements.
+            </p>
+        </div>
+        <div class="dropdown">
+            <h2 (click)="alphaA_z()" style="cursor: pointer;">A-Z</h2>
+            <h2 (click)="alphaZ_a()" style="cursor: pointer;">Z-A</h2>
+            <h2 (click)="alphaH_l()" style="cursor: pointer;">High to Low</h2>
+            <h2 (click)="alphaL_h()" style="cursor: pointer;">Low to High</h2>
+            <h2 (click)="alphanumber()" style="cursor: pointer;">20-30</h2>
+        </div>
+        <div class="tvalcoves_list bathroomslist">
+            <!-- <div *ngIf ="showSpinner">
+                <sa-spinner-dotted></sa-spinner-dotted>
+            </div> -->
+            <!-- <div *ngIf="">
+               
+            </div> -->
+
+            <ngx-spinner [name]="spinnerName" [type]="spinnerType"></ngx-spinner>
+
+       
+                <ul class="row">                          
+                    <li class="col-sm-6 col-md-6 col-xs-4 col-xl-4" *ngFor = "let bathrooms__ of bathrooms " > 
+                        
+                        <a [routerLink]="['/bathroomsdetails',bathrooms__.id]">
+                            <div class="img">
+                                <figure>
+                                    <img src="http://localhost/peterbernard_ci/uploads/{{bathrooms__.image}}">
+                                </figure>
+                            </div> 
+                        </a>                      
+                            <div class="tvalcoves_content">
+                                <h2>{{bathrooms__.name}}</h2>
+                                <p>{{bathrooms__.text}}</p>
+                                <p>{{bathrooms__.price | currency:'INR'}}</p>
+                                <p>{{bathrooms__.quantity}}</p>
+                            </div>
+                                                       
+                    </li>
+                        
+                           
+                       
+                </ul>
+           
+               
+         
+            <!-- -----------------filtered of price---------------- -->
+            <ul class="row">                          
+                <li class="col-sm-6 col-md-6 col-xs-4 col-xl-4" *ngFor = "let bathrooms__ of dada" > 
+                    
+                    <a [routerLink]="['/bathroomsdetails',bathrooms__.id]">
+                        <div class="img">
+                            <figure>
+                                <img src="http://localhost/peterbernard_ci/uploads/{{bathrooms__.image}}">
+                            </figure>
+                        </div> 
+                    </a>                      
+                        <div class="tvalcoves_content">
+                            <h2>{{bathrooms__.name}}</h2>
+                            <p>{{bathrooms__.text}}</p>
+                            <p>{{bathrooms__.price | currency:'INR'}}</p>
+                            <p>{{bathrooms__.quantity}}</p>
+                        </div>
+                                                   
+                </li>
+                    
+                       
+                   
+            </ul>
+          
+            
+        </div>
+        <!-- <ng-container *ngIf="cart else empty">
+            <p>Show</p>
+        </ng-container>
+        <ng-template #empty>
+
+        </ng-template> -->
+            
+    </div>
+</section>
+<app-footer></app-footer>

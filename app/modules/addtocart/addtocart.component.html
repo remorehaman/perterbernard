@@ -1,0 +1,76 @@
+<app-header></app-header>
+<section class="add_to_cart">
+    <div class="container">
+        <table class="table table-bordered" id="dataTable" cellspacing="0">
+            <thead>
+                <tr>
+                   
+                    <th>Item Title</th>
+                    <th>Quantity</th>
+                    <th>Unit Price</th>
+                    <th>Sub Total</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            
+
+            <tbody>
+              
+                <ng-container *ngIf="bathrooms_cart else cartEmpty">
+                    <tr *ngFor ="let addToCart of bathrooms_cart; let myIndex=index;">
+                      
+                        <td>
+                            <h2 class="cart-subhead subheading">{{addToCart?.title}}</h2>
+                        </td>
+                        <td>
+                            <button class="cart_btn"><input type="number" readonly="" id=""  class="input-text qty" [value]="addToCart?.addedqty" name="quantity"  title="Qty" placeholder="" inputmode="numeric" id="quantity">                                
+                                <div class="qty">
+                                    <input type="button" value="+" class="plus" (click) ="increase(myIndex)"> 
+                                    <input type="button" value= "-"  class="minus" (click) ="derease(myIndex)">  
+                                </div>                               
+                            </button>   
+                            <p>{{addToCart?.quantity}}</p>
+                        </td>
+                        <td>
+                            <h3>{{addToCart?.price | currency : 'INR'}}</h3>
+                        </td>
+                        <td>
+                            <h3>{{addToCart?.price * addToCart.addedqty | currency : 'INR'}}</h3>
+                        </td>
+                        <td>
+                            <a class="btn btn-sm btn-danger deleteRow" title="Delete" (click) ="removeItem(myIndex)"><i class="fa fa-trash"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                         <td  colspan="6">
+                            <h4 class="total">{{samTotal}}</h4>
+                         </td>
+                    </tr>    
+                </ng-container>
+                <ng-template #cartEmpty>  
+
+                    <tr>
+                        <td colspan="12"> <h2>Your Cart is empty !</h2>  </td>
+                    </tr>
+                                                        
+                </ng-template>
+              
+                <div *ngIf="emptykaka">
+                    <h2>Your Cart is empty  !</h2> 
+                </div>
+               
+                <tr>
+                    <td  colspan="12">
+                        <button type="button" (click) = "pay(200)" id="proceedtocheckout" class="btn_1 medium" style="float: right;">Proceed to checkout</button>
+                        <button type="submit" (click)="updateAmount()" class="btn_1 medium" style="float: right; margin-right:10px;">Update</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+       
+    </div>
+</section>
+<app-footer></app-footer>

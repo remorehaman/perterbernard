@@ -1,0 +1,55 @@
+<div class="header">
+    <div class="container">
+        <div class="top_header">
+            <figure><a [routerLink]="['']" class="navbar-brand logo_m"><img src="assets/images/New-Project.png"></a></figure>
+             <div class="contact_header">
+                <h4>Phone No - <a href="tel:(01) 201 1901" class="hcontact phone">(01) 201 1901</a></h4>
+                <h4>Email us - <a href="mailto:info@peterbernard.ie" class="hcontact mail">info@peterbernard.ie</a></h4>
+            </div>
+            <nav class="menu">
+                <ul>
+                    
+                    <li><a [routerLink]="['/']" routerLinkActive="active">Home</a></li>
+                    <li><a href="#">Kitchens</a>
+                        <!-- <ul class="submenu" >
+                            <li *ngFor ="let parentategories of parentCat">
+                               <a href="{{parentategories.id}}">
+                                  <span>{{parentategories.title}}</span>
+                               </a>
+                            </li>              
+                        </ul> -->
+                        <ul class="submenu" >
+                            <li><a href="javascript:void(0)"> <span>Classic  Kitchen</span> </a>
+                                <ul class="child_menu">
+                                    <li *ngFor ="let childCat__ of childCat">
+                                        <a href [routerLink] = "['/kitchens',childCat__.parent_id,childCat__.id]">
+                                            <span>{{childCat__.title}}</span>
+                                        </a>
+                                        <!--   -->
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="javascript:void(0)"> <span>Mordern  Kitchen</span> </a>
+                                <ul class="child_menu">
+                                    <li *ngFor ="let newchildCat__ of newchildcat">
+                                        <a href [routerLink] = "['/kitchens',newchildCat__.parent_id,newchildCat__.id]">
+                                            <span>{{newchildCat__.title}}</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                             </li>                   
+                        </ul>
+                    </li>
+                    <li><a [routerLink]="'/tvalcoves'" routerLinkActive="active">Tv & Alcoves</a></li>
+                  
+                    <li><a [routerLink]="'/accessories'" routerLinkActive="active">Accessories</a></li>
+                    <li><a [routerLink]="'/bathrooms'" routerLinkActive="active">Bathrooms</a></li>
+                    <li><a [routerLink]="'/bedrooms'" routerLinkActive="active">Bedrooms</a></li>
+                    <li><a [routerLink]="'/addtocart'" routerLinkActive="active">Cart</a></li>
+                    <li><a [routerLink]="'/contact'" routerLinkActive="active">Contact</a></li>
+                        
+                </ul>        
+            </nav>               
+        </div>
+    </div>
+</div>

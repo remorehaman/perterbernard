@@ -1,0 +1,46 @@
+<app-header></app-header>
+
+<div class="accessories_details">
+   
+        <div class="breadcun" *ngFor = "let acc_details of accDetails">
+            <div class="container">
+                <h2>{{acc_details.banner_name}}</h2>
+                <div class="right">
+                    <ul>
+                        <li><a [routerLink]="['/']" routerLinkActive="active">Home</a></li> >
+                        <li><a [routerLink]="'/accessories'" routerLinkActive="active">Accessories</a></li> >
+                        <h4>{{acc_details.banner_name}}</h4>
+                    </ul>
+                   
+                </div>
+            </div>
+
+        </div>
+        <div class="container">
+            <div class="accessories_main_details" *ngFor = "let acc_details of accDetails">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="img">
+                            <figure>
+                                <img src="http://localhost/peterbernard_ci/uploads/{{acc_details.image}}">
+                            </figure>
+                        </div>    
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="accessories_main_content">
+                        
+                            <p [innerHtml] = "acc_details.text"></p>
+                        
+                        </div>
+                        <div class="enuqire_button">
+                            <button type="button" class="enuqire_pop_up" data-toggle="modal" data-target="#exampleModal">Enquire Now</button>
+                        </div>
+                    </div>
+                </div>
+                                
+            
+            </div>
+        </div>
+</div>
+    
+<app-footer></app-footer>

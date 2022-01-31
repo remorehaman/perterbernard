@@ -1,0 +1,45 @@
+<app-header></app-header>
+<section class="tvalcoves_details">
+    <div class="container">
+        <div class="main_tv" *ngFor="let tvdetails of tv_new_data">
+            <figure>
+                <img src="http://localhost/peterbernard_ci/uploads/{{tvdetails?.image}}">
+            </figure>
+            <div class="tv_details_content">
+                <h2>{{tvdetails?.banner_name}}</h2>
+                <p>{{tvdetails?.text}}</p>
+            </div>
+            
+        </div> 
+        
+       
+    </div>
+    <!-- <div class="tv_slider">
+        <div class="container">
+            <owl-carousel-o [options]="customOptions">
+                <ng-container *ngFor="let tv_slider of tv_alcoves">
+                    <ng-template carouselSlide>
+                        <a [routerLink] = "['/tvalcovesdetails',tv_slider.id]"><img src="http://localhost/peterbernard_ci/uploads/{{tv_slider?.image}}"></a>
+                    </ng-template>
+                </ng-container>          
+            </owl-carousel-o>
+        </div>
+       
+    </div>  -->
+    <div class="tv_slider">
+        <div class="container">  
+            <ul class="row">
+                <li class="col-sm-3" *ngFor="let tv_slider of tv_alcoves; let myIndex=index;" >
+               
+                    <a [routerLink] = "['/tvalcovesdetails',tv_slider.id]" ><img src="http://localhost/peterbernard_ci/uploads/{{tv_slider?.image}}"></a>
+                    <h2>{{tv_slider.id}}</h2>
+                    
+                </li>   
+            </ul>    
+                  
+           
+        </div>
+       
+    </div> 
+</section>
+<app-footer></app-footer>

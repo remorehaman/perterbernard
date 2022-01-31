@@ -1,0 +1,33 @@
+<app-header></app-header>
+<section class="tvalcoves_details kitchen_details">
+    <div class="container">
+        <div class="main_tv" *ngFor="let productsDetails__ of productsDetails">
+            <figure>
+                <img src="http://localhost/peterbernard_ci/uploads/{{productsDetails__?. product_image}}">
+            </figure>
+            <div class="tv_details_content">
+                <h2>
+                    {{ productsDetails__?.product_title }}
+                </h2>
+                <p>{{productsDetails__?.product_desc}}</p>
+            </div>
+            
+        </div> 
+        
+       
+    </div>
+    <!-- <div class="tv_slider kitchen_slider">
+        <div class="container">
+            <owl-carousel-o [options]="customOptions">
+                <ng-container *ngFor="let bathrooms_data__ of bathrooms_data">
+                    <ng-template carouselSlide>
+                        <a [routerLink] = "['/bathroomsdetails',bathrooms_data__.id]"><img src="http://localhost/peterbernard_ci/uploads/{{bathrooms_data__?.image}}"></a>
+                    </ng-template>
+                </ng-container>          
+            </owl-carousel-o>
+        </div>
+       
+    </div>  -->
+   
+</section>
+<app-footer></app-footer>
